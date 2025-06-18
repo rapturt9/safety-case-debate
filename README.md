@@ -5,6 +5,7 @@ A comprehensive AI safety evaluation system using the prover-estimator debate fr
 ## 🎯 Overview
 
 This system implements the prover-estimator debate protocol described in:
+
 - [Prover-Estimator Debate: A New Scalable Oversight Protocol](https://www.alignmentforum.org/s/NdovveRcyfxgMoujf/p/8XHBaugB5S3r27MG9)
 - [An alignment safety case sketch based on debate](https://www.alignmentforum.org/s/NdovveRcyfxgMoujf/p/iELyAqizJkizBQbfr)
 
@@ -56,17 +57,20 @@ This system implements the prover-estimator debate protocol described in:
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone <repository-url>
 cd safety-case-debate
 ```
 
 2. Install dependencies:
+
 ```bash
 pip install -r requirements.txt
 ```
 
 3. Set up environment variables:
+
 ```bash
 cp .env.example .env
 # Edit .env with your API keys
@@ -77,7 +81,7 @@ cp .env.example .env
 #### Web Interface (Recommended)
 
 ```bash
-streamlit run app.py --server.port 12000 --server.host 0.0.0.0
+streamlit run app.py --server.port 15000 --server.host 0.0.0.0
 ```
 
 Then open your browser to the provided URL.
@@ -113,6 +117,7 @@ results = run_safety_case_evaluation(
 ### Example Usage
 
 Run the example script:
+
 ```bash
 python example_usage.py
 ```
@@ -124,7 +129,7 @@ This will generate a complete safety case evaluation and save visualizations as 
 The system evaluates four key claims based on the alignment forum framework:
 
 1. **Training Equilibrium**: The training process has reached an approximate global equilibrium
-2. **Error Bounds**: In equilibrium, the system makes mistakes in at most an ε'-fraction of cases  
+2. **Error Bounds**: In equilibrium, the system makes mistakes in at most an ε'-fraction of cases
 3. **Deployment Stability**: Error rate won't drift past ε during deployment with online training
 4. **Acceptable Risk**: The system cannot cause unacceptable outcomes given error rate ε
 
@@ -150,6 +155,7 @@ The system generates several types of diagrams:
 ### Model Selection
 
 Supports multiple LLM providers through OpenRouter:
+
 - OpenAI (GPT-4, GPT-4-turbo, GPT-3.5-turbo)
 - Anthropic (Claude-3-opus, Claude-3-sonnet, Claude-3-haiku)
 - Other OpenRouter-supported models
